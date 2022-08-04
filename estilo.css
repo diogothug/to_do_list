@@ -1,0 +1,38 @@
+body {
+    background: black;
+    color: whitesmoke;
+    margin: 0%;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1rem;
+}
+
+.conteudo {
+    margin: 50px auto 50px;
+    width: 100%;
+    max-width: 380px;
+    background: #2b2a2a;
+    padding: 55px;
+    border-radius: 12px;
+}
+
+.topo {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 35px;
+}
+
+#entrada_nova_tarefa {
+    width: 350px;
+    padding: 15px;
+    background: #191818;
+    color: whitesmoke;
+    border-radius: 12px;
+    border: 1px solid #191818;
+    outline: none;
+    font-size: 1.2rem;
+}
+
+#botao_adicionar {
+    width: 45px;
+    border-radius: 12px;
+}
