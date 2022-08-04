@@ -6,17 +6,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" 
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="estilo.css">
     <title>Document</title>
 </head>
 <body>
     <main class="conteudo">
         <div class="topo">
-            <input type="text" id="entrada_novaTarefa" placeholder="Adicione nova tarefa">
+            <input type="text" id="entrada_nova_tarefa" placeholder="Adicione nova tarefa">
             <button id="botao_adicionar">
                 <i class="fa fa-plus"></i>
             </button>
 
         </div>
+        <ul id="lista_tarefas">
+            <li>
+                <h3 class="textoTarefa">Tarefa 1</h3>
+                <div>
+                    <button class="botaoAcao">
+                        <i class="fa fa-pencil"></i>
+                    </button>
+                    <button class="botaoAcao">
+                        <i class="fa fa-trash"></i>
+                    </button>
+                </div>
+            </li>
+        </ul>
     </main>
 </body>
 </html>

@@ -35,4 +35,13 @@ body {
 #botao_adicionar {
     width: 45px;
     border-radius: 12px;
+    border: 1px solid #191818;
+    background: #191818;
+    color: whitesmoke;
+    outline: none;
+}
+
+#botao_adicionar:hover {
+    background: #1f1e1e;
+
 }
