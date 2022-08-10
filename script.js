@@ -1,6 +1,7 @@
 let entrada_nova_tarefa = document.querySelector("#entrada_nova_tarefa");
 let botao_adicionar = document.querySelector('#botao_adicionar');
 let lista_tarefas = document.querySelector('#lista_tarefas');
+let btn_fechar_edicao = document.getElementById('btn_fechar_edicao');
 
 entrada_nova_tarefa.addEventListener('keypress', (e) =>{
     if (e.keyCode == 13) {
@@ -65,7 +66,14 @@ function criarTagLi(tarefa) {
 };
 
 function editar(id_tarefa) {
-    alert(id_tarefa);    
+    confirmacao = window.confirm('Editar tarefa?');
+    if (confirmacao) {
+        let li = document.getElementById(''+id_tarefa+'');
+        if(li) {
+            lista_tarefas.removeChild(li);
+        };
+
+    }   
 };
 
 function excluir(id_tarefa) {
