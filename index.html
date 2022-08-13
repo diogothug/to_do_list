@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Tarefas</title>
     <link rel="stylesheet" 
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="estilo.css">
@@ -23,19 +24,19 @@
         <button id="btn_fechar_edicao">
             <i class="fa fa-remove"></i>
         </button>
-        <h2>1021</h2>
+        <h2 id="titulo_tarefa_edicao">1021</h2>
         <hr>
         <form>
             <div class="frm-linha">
                 <label for="nome">Nome</label>
-                <input type="text" id="nome_tarefa_edicao">
+                <input type="text" id="input_tarefa_edicao">
             </div>
             <div class="frm-linha">
                 <button id="btn_atualizar_tarefa">Salvar</button>
             </div>
-            <div id="janela_edicao_fundo"></div>
         </form>
     </aside>
+    <div id="janela_edicao_fundo"></div>
 <script src="script.js"></script>
 </body>
 </html>

@@ -2,6 +2,11 @@ let entrada_nova_tarefa = document.querySelector("#entrada_nova_tarefa");
 let botao_adicionar = document.querySelector('#botao_adicionar');
 let lista_tarefas = document.querySelector('#lista_tarefas');
 let btn_fechar_edicao = document.getElementById('btn_fechar_edicao');
+let btn_atualizar_tarefa = document.getElementById('btn_atualizar_tarefa');
+let janela_edicao = document.getElementById('janela_edicao');
+let janela_edicao_fundo = document.getElementById('janela_edicao_fundo');
+let input_tarefa_edicao = document.getElementById('input_tarefa_edicao');
+let titulo_tarefa_edicao = document.getElementById('titulo_tarefa_edicao');
 
 entrada_nova_tarefa.addEventListener('keypress', (e) =>{
     if (e.keyCode == 13) {
@@ -23,15 +28,33 @@ botao_adicionar.addEventListener("click", (e) =>{
     adicionarTarefa(tarefa);
 });
 
+btn_atualizar_tarefa.addEventListener('click', (e) => {
+    e.preventDefault();
+    let tarefa_editada = input_tarefa_edicao.value;
+    let id_tarefa_edicao = titulo_tarefa_edicao.innerHTML;
+    let tarefa = {
+        nome: input_tarefa_edicao.value,
+        id: id_tarefa_edicao,
+    };
+    let tarefa_atual = document.getElementById(''+id_tarefa_edicao+'');
+    let li = criarTagLi(tarefa);
+    lista_tarefas.replaceChild(li, tarefa_atual);
+    alternar_janela_edicao();
+});
+
+btn_fechar_edicao.addEventListener('click', (e) => {
+    alternar_janela_edicao();
+});
+
 function gerarId() {
     return Math.floor(Math.random() * 3000);
 };
 
 function adicionarTarefa(tarefa) {
     if (entrada_nova_tarefa.value != '') {
-    let li = criarTagLi(tarefa);
-    lista_tarefas.appendChild(li);
-    entrada_nova_tarefa.value = '';
+        let li = criarTagLi(tarefa);
+        lista_tarefas.appendChild(li);
+        entrada_nova_tarefa.value = '';
     }
     else {
         window.alert("Adicione um texto");
@@ -70,10 +93,11 @@ function editar(id_tarefa) {
     if (confirmacao) {
         let li = document.getElementById(''+id_tarefa+'');
         if(li) {
-            lista_tarefas.removeChild(li);
+            titulo_tarefa_edicao.innerHTML = id_tarefa;
+            alternar_janela_edicao();
         };
 
-    }   
+    };
 };
 
 function excluir(id_tarefa) {
@@ -85,4 +109,9 @@ function excluir(id_tarefa) {
         };
 
     }
+};
+
+function alternar_janela_edicao() {
+    janela_edicao.classList.toggle('abrir');
+    janela_edicao_fundo.classList.toggle('abrir');
 };
